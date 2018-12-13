@@ -1,0 +1,16 @@
+
+server:
+  port: 8820
+spring:
+  application:
+    name: micro-service-provider
+
+eureka:
+  instance:
+    prefer-ip-address: true #是否当应用程序向eureka服务注册时，它使用其IP地址而不是其主机名
+    lease-renewal-interval-in-seconds: 5 #指示eureka客户端需要多长时间(以秒为单位)将心跳发送到eureka服务器以确定仍然活动，即保活心跳间隔时间。默认30秒
+  client:
+    register-with-eureka: true #是否把自己注册到eureka服务上
+    service-url:
+      defaultZone: http://192.168.23.66:8761/eureka/ #eureka服务地址
+      

@@ -1,0 +1,16 @@
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    home-page-url: 
+    hostname: my-eureka-server
+    lease-expiration-duration-in-seconds: 15 #指示eureka服务器在接收到对应实例最后一次心跳后等待多少时间(未再次收到心跳)(以秒为单位)才能从视图中删除该实例，且该值必须大于leaseRenewalIntervalInSeconds。默认90秒
+    lease-renewal-interval-in-seconds: 5 #指示eureka客户端需要多长时间(以秒为单位)将心跳发送到eureka服务器以确定仍然活动，即保活心跳间隔时间。默认30秒
+  client:
+    register-with-eureka: false #是否把自己注册到eureka服务上
+    fetch-registry: false #此客户端是否应从eureka服务获取eureka注册表信息
+    service-url:
+      defaultZone: http://192.168.23.66:8761/eureka/
+      
